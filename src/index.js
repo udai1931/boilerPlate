@@ -19,7 +19,11 @@ mongoose.connection
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
-app.use(cookieParser())                    
+app.use(cookieParser())      
+
+app.get("/",async (req,res) => {
+    res.send('hi')
+})
 
 app.get('/api/user/auth',auth,async (req,res) => {
     res.status(200).json({
